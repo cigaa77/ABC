@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import TextCustom from './TextCustom';
 import PropTypes from 'prop-types';
+import TextCustom from './TextCustom';
 import * as dist from '../assets/datas/ResponseDatas'
 
 export default class TextBlock extends React.Component {

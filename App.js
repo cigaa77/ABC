@@ -1,14 +1,11 @@
-
 import React from 'react';
-import NavAppContainer from './src/NavAppContainer';
 import { SafeAreaView } from 'react-navigation';
 import { createStore } from 'redux';
-import reducer from './src/reducer/stateReducer';
+import NavAppContainer from './src/NavAppContainer';
 import { Provider } from 'react-redux'
+import reducer from './src/reducer/stateReducer';
 
 const store = createStore(reducer);
-
-
 
 export default class App extends React.Component {
     render() {

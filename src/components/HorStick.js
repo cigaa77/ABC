@@ -11,9 +11,7 @@ export default class Stick extends React.Component {
                 marginTop: 0,
                 backgroundColor: this.props.color,
                 opacity: this.props.opacity ? this.props.opacity / 100 : 1,
-                // ...this.props.style,
-            }
-            } />
+            }} />
         );
     }
 }

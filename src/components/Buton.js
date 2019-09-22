@@ -1,7 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
 import * as colors from '../assets/datas/Colors';
-import * as dist from '../assets/datas/ResponseDatas';
 import TextCustom from '../components/TextCustom';
 import PropTypes from 'prop-types'
 

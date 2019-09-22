@@ -19,9 +19,7 @@ export default class TextCustom extends React.Component {
     }
 
     render() {
-
         return (
-
             <Text style={{
                 fontSize: this.fontSize(this.props.fontSize),
                 fontFamily: 'Helvetica Neue', color: this.props.color,
@@ -38,5 +36,5 @@ TextCustom.propTypes = {
     fontSize: Proptypes.number.isRequired,
     color: Proptypes.string.isRequired,
     bold: Proptypes.string,
-    style:Proptypes.object
+    style: Proptypes.object
 }

@@ -1,21 +1,18 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, Button, PixelRatio, Dimensions, ScrollView, TouchableOpacity, TouchableWithoutFeedback } from 'react-native'
-
-import * as colors from '../assets/datas/Colors'
-import * as dist from '../assets/datas/ResponseDatas'
-
-import V_Stick from '../components/VerStick'
-import H_Stick from '../components/HorStick'
-import TextCustom from '../components/TextCustom'
-import Space from '../components/space'
+import { View, StyleSheet, Image, ScrollView, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
+import { connect } from 'react-redux';
+import * as colors from '../assets/datas/Colors';
+import * as dist from '../assets/datas/ResponseDatas';
+import V_Stick from '../components/VerStick';
+import H_Stick from '../components/HorStick';
+import TextCustom from '../components/TextCustom';
+import Space from '../components/space';
 import TextBlock from '../components/TextBlock';
 import ShowMore from './showMore';
 import Circle from '../components/circleText';
 import Agenda from './Agenda';
 import Activities from './Activities';
-import AddFile from './AddFile'
-
-import { connect } from 'react-redux';
+import AddFile from './AddFile';
 import { showMoreStatus } from '../actions/ShowMore'
 import { pressTab1, pressTab2, pressTab3 } from '../actions/pressTabs';
 
@@ -23,7 +20,6 @@ class HomeScreen extends React.Component {
 
     static navigationOptions = ({ navigation }) => {
         return {
-            headerBackTitle: null,
             headerStyle: {
                 backgroundColor: colors.NAVIGATION_BACKGROUND_COLOR,
             },
@@ -39,9 +35,6 @@ class HomeScreen extends React.Component {
 
     }
 
-    componentDidMount() {
-        // alert(this.props.bold[1])
-    }
     renderX = (x, text, text3) => {
         return (
             <View style={{ alignItems: 'center', justifyContent: 'center', width: '50%' }}>
@@ -51,6 +44,7 @@ class HomeScreen extends React.Component {
             </View>
         )
     }
+
     HorizontalStick = (opacity, height = 1) => {
         return (
             <View style={styles.HorizontalStick}>
@@ -58,6 +52,7 @@ class HomeScreen extends React.Component {
             </View>
         )
     }
+
     touchableTabs = (press, color, text, cText = '') => {
         return (
             <TouchableWithoutFeedback onPress={press} >
@@ -73,27 +68,29 @@ class HomeScreen extends React.Component {
     }
 
     render() {
-
-
         return (
             <View style={{ flex: 1 }} >
                 <ScrollView >
 
                     <View style={styles.communicationButtons}>
+
                         < View style={styles.viewCont}>
                             <Image style={styles.ComImage} source={require('../assets/img/communicationBar/phone/Group.png')} />
                             <TextCustom fontSize={16} color={colors.TEXT_COLOR_1} >Call</TextCustom>
                             <V_Stick height={dist.vStick} color={colors.COLON1} />
                         </View >
+
                         < View style={styles.viewCont}>
                             <Image style={styles.ComImage} source={require('../assets/img/communicationBar/chat/Group.png')} />
                             <TextCustom fontSize={16} color={colors.TEXT_COLOR_1} >Message</TextCustom>
                             <V_Stick height={dist.vStick} color={colors.COLON1} />
                         </View >
+
                         < View style={styles.viewCont}>
                             <Image style={styles.ComImage} source={require('../assets/img/communicationBar/eMail/Group.png')} />
                             <TextCustom fontSize={17} color={colors.TEXT_COLOR_1} >E-Mail</TextCustom>
                         </View >
+
                     </View>
 
                     <H_Stick height={1} color={colors.COLON1} opacity={50} />
@@ -105,10 +102,13 @@ class HomeScreen extends React.Component {
                     <H_Stick height={1} color={colors.COLON2} />
 
                     <View style={styles.profileView}>
+
                         <View style={{ flex: 51, alignItems: 'center', justifyContent: 'center' }}>
                             <Image style={{ width: dist.I_WITDH_1, height: dist.I_WITDH_1 }} source={require('../assets/img/profil/Oval.png')} />
                         </View>
+
                         <View style={{ flex: 151 }}>
+
                             <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-around' }}>
                                 <View style={styles.profileText}>
                                     <TextCustom fontSize={20} color={colors.TEXT_COLOR_3}>25</TextCustom>
@@ -123,6 +123,7 @@ class HomeScreen extends React.Component {
                                     <TextCustom fontSize={13} color={colors.TEXT_COLOR_2}>Offer</TextCustom>
                                 </View>
                             </View>
+
                             <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-evenly' }}>
                                 <View style={styles.Btn1}>
                                     <TextCustom fontSize={14} color={colors.TEXT_COLOR_1}>Add Showing</TextCustom>
@@ -134,6 +135,7 @@ class HomeScreen extends React.Component {
                                     </View>
                                 </View>
                             </View>
+
                         </View>
                     </View>
 
@@ -145,16 +147,18 @@ class HomeScreen extends React.Component {
                         </View>
                         <TextCustom color={colors.TEXT_COLOR_3} fontSize={16}>€165.000</TextCustom>
                     </View>
+
                     <Space height={dist.H_DIST_3} />
                     <H_Stick height={1} color={colors.COLON3} />
-
 
                     <View style={{ paddingTop: dist.PADDING_4, paddingLeft: dist.PADDING_3, paddingBottom: dist.H_DIST_3 }}>
                         <TextCustom fontSize={14} color={colors.NAVIGATION_COLOR}>
                             &#123;Status{'}'} | For &#123;Selling Type{'}'} | &#123;Proprety Type{'}'}
                         </TextCustom>
                     </View>
+
                     {this.HorizontalStick(40)}
+
                     <View style={{ paddingTop: dist.H_DIST_3, paddingLeft: dist.PADDING_3, paddingBottom: dist.PADDING_6 }}>
                         <TextCustom fontSize={14} color={colors.NAVIGATION_COLOR}>
                             {'{'}Room&#125; | &#123;SurfaceArea&#125; | &#123;Bathroom&#125; | &#123;SelectedAnqituity&#125;
@@ -177,6 +181,7 @@ class HomeScreen extends React.Component {
                         <ShowMore />
                     }
                     {/* ------------------------------ */}
+
                     <H_Stick height={1} color={colors.COLON3} />
 
                     <View style={{ flexDirection: 'row', paddingTop: dist.PADDING_8, paddingHorizontal: dist.PADDING_9, justifyContent: 'space-between' }}>
@@ -197,6 +202,7 @@ class HomeScreen extends React.Component {
                             <TextCustom fontSize={14} color={colors.COLOR_1}>...</TextCustom>
                             <TextCustom fontSize={14} color={colors.TEXT_COLOR_1}>edit tags</TextCustom>
                         </View>
+
                     </View>
 
                     <View style={{ marginTop: 18, height: dist.I_HEIGHT_1 }}>

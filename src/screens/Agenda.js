@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { View, Image, ScrollView } from 'react-native';
+import React from 'react';
+import { View, Image } from 'react-native';
 import TextCustom from '../components/TextCustom';
 import * as colors from '../assets/datas/Colors';
 import * as dist from '../assets/datas/ResponseDatas';
@@ -59,7 +59,6 @@ class Agenda extends React.Component {
                         </View>
                     }
 
-
                     <View style={{ paddingTop: dist.PADDING_6, flexDirection: 'row' }}>
                         <C_Buton borderColor={item.color1} height={dist.B_HEIGHT_1} width={dist.WITDH_1} backgroundColor={item.color1}
                             fontSize={14} textColor={item.color2}>{item.text6}</C_Buton>
@@ -74,10 +73,12 @@ class Agenda extends React.Component {
                             </View>
                         }
                     </View>
+
                 </View>
             </View>
         )
     }
+
     renderHeader = (fSize, text1, text2) => {
         return (
             <View style={{ flexDirection: 'row', paddingTop: dist.PADDING_6, paddingBottom: dist.PADDING_13, paddingLeft: dist.disItem1, paddingRight: dist.PADDING_9 }}>

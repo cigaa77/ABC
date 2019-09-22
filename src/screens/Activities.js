@@ -11,6 +11,7 @@ export default class Activities extends React.Component {
     render() {
         return (
             <View style={{ alignItems: 'center' }}>
+
                 <Space height={dist.HEIGHT_2} />
                 <Image source={require('../assets/img/BitMap/Bitmap.png')} />
                 <TextBlock pTop={dist.PADDING_6} pBottom={dist.B_HEIGHT_1}
@@ -22,16 +23,21 @@ export default class Activities extends React.Component {
                     </TextCustom>
                 </View>
                 <Space height={dist.H_DIST_1} />
+
                 <H_Stick height={0.4} color={colors.COLON1} />
+
                 <TextBlock pTop={dist.PADDING_11} pBottom={dist.PADDING_11}
                     fontSize={17} color={colors.TEXT_COLOR_1}>Add Task</TextBlock>
                 <H_Stick height={0.4} color={colors.COLON1} />
+
                 <TextBlock pTop={dist.PADDING_11} pBottom={dist.PADDING_11}
                     fontSize={17} color={colors.TEXT_COLOR_1}>Add Showing</TextBlock>
                 <H_Stick height={0.5} color={colors.COLON1} />
+
                 <TextBlock pTop={dist.PADDING_11} pBottom={dist.PADDING_11}
                     fontSize={17} color={colors.TEXT_COLOR_1}>Add Offer</TextBlock>
                 <H_Stick height={0.4} color={colors.COLON1} />
+
                 <Space height={dist.BOTTOM} />
             </View>
         )
